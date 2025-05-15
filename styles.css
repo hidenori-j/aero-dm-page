@@ -245,9 +245,26 @@ nav ul li a.cta-button {
 }
 
 .performance-item h3 {
-    color: var(--primary-color);
-    margin-bottom: 20px;
-    font-size: 1.3rem;
+    color: #1A237E;
+    margin-bottom: 25px;
+    font-size: 1.45rem;
+    position: relative;
+    padding-bottom: 15px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.performance-item h3:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, rgba(31, 118, 180, 0.9), rgba(255, 159, 28, 0.9));
+    border-radius: 3px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .performance-content {
@@ -264,10 +281,55 @@ nav ul li a.cta-button {
 .performance-graph {
     flex: 1;
     min-width: 300px;
+    /* height: 380px; */ /* 正方形にするため高さをコメントアウトまたは削除 */
+    aspect-ratio: 1 / 1; /* アスペクト比を1:1に設定 */
+    position: relative;
+    border-radius: 16px;
+    background: #ffffff;
+    padding: 20px 25px 25px 20px;
+    box-shadow: 0 6px 20px rgba(100, 120, 150, 0.12);
+    transition: all 0.3s ease-in-out;
+    max-width: 500px; /* 最大幅も設定しておくと、極端に大きくなるのを防げます */
+    margin-left: auto; /* Flexコンテナ内で中央揃えにする場合 */
+    margin-right: auto; /* Flexコンテナ内で中央揃えにする場合 */
+}
+
+.performance-graph:hover {
+    box-shadow: 0 10px 30px rgba(80, 100, 130, 0.18);
+    transform: translateY(-6px) scale(1.015);
+}
+
+.performance-graph canvas {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 10px;
 }
 
 .performance-text p {
     margin-bottom: 10px;
+}
+
+.performance-text .highlight {
+    background: linear-gradient(transparent 58%, rgba(31, 118, 180, 0.22) 42%);
+    font-weight: 700;
+    padding: 1px 4px;
+    border-radius: 3px;
+}
+
+.performance-note {
+    margin-top: 25px;
+    padding: 15px 20px;
+    background-color: #f8f9fa;
+    border-left: 4px solid #1e88e5;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.performance-note p {
+    font-size: 0.95rem;
+    color: #495057;
+    margin: 0;
+    line-height: 1.5;
 }
 
 /* お客様の声セクション */

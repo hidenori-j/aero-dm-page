@@ -6,6 +6,7 @@
     <title>エアロシステム35M | 医療施設向け高性能空気清浄装置</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
@@ -78,10 +79,13 @@
                         <div class="performance-text">
                             <p><strong>試験機関：</strong>（財）日本食品分析センター</p>
                             <p><strong>試験方法：</strong>（社）日本電機工業会が定めた空気清浄機の浮遊ウィルスに対する除去性能試験方法による。</p>
-                            <p><strong>試験結果：</strong>5分後に自然減衰の21％に減少、10分後に1.38％に減少、20分後には0.02％まで減少</p>
+                            <p><strong>試験結果：</strong><span class="highlight">5分後に自然減衰の21％に減少</span>、<span class="highlight">10分後に1.38％に減少</span>、<span class="highlight">20分後には0.02％まで減少</span></p>
+                            <div class="performance-note">
+                                <p>※グラフはマウスまたはタッチでインタラクティブに操作できます</p>
+                            </div>
                         </div>
                         <div class="performance-graph">
-                            <img src="images/virus-graph.svg" alt="浮遊ウイルス除去性能グラフ">
+                            <canvas id="virusRemovalChart"></canvas>
                         </div>
                     </div>
                 </div>
