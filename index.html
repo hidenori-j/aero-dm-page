@@ -95,10 +95,13 @@
                         <div class="performance-text">
                             <p><strong>試験機関：</strong>（財）日本食品分析センター</p>
                             <p><strong>試験方法：</strong>25m&sup3;の試験空間にて高さ70cmのテーブル上に空気清浄機AR35M（中運転）を置いて実施</p>
-                            <p><strong>試験結果：</strong>運転5分後には、初期値の7.3％まで減少。15分後には検出不可能な状態にまで減少。</p>
+                            <p><strong>試験結果：</strong><span class="highlight">運転5分後には初期値の約7.3％まで減少。</span><span class="highlight">15分後には検出限界以下まで大幅に減少します。</span></p>
+                            <div class="performance-note">
+                                <p>※グラフはマウスまたはタッチでインタラクティブに操作できます</p>
+                            </div>
                         </div>
                         <div class="performance-graph">
-                            <img src="images/pollen-graph.svg" alt="花粉除去性能グラフ">
+                            <canvas id="pollenRemovalChart"></canvas>
                         </div>
                     </div>
                 </div>
