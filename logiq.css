@@ -1,0 +1,252 @@
+/* =============================================
+   Sony LOGIQ Inspired Redesign – logiq.css
+   本スタイルシートは既存の styles.css を上書き・補完し、
+   より洗練された企業サイト風デザインに刷新します。
+   ============================================= */
+
+/* 1. カラーパレット & タイポグラフィ ---------------------------------- */
+:root {
+    /* Primary blues reminiscent of Sony corporate branding */
+    --primary-color: #003087;  /* 深みのあるネイビーブルー */
+    --secondary-color: #0057c7; /* 鮮やかなロイヤルブルー */
+    --accent-color: #00a1ff;  /* アクア系アクセント */
+
+    /* Neutral greys */
+    --text-color: #202124;
+    --light-gray: #f4f6f8;
+    --medium-gray: #dce0e5;
+    --dark-gray: #5f6368;
+
+    --white: #ffffff;
+
+    /* Effects */
+    --box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    --transition: all .28s cubic-bezier(.4, 0, .2, 1);
+}
+
+body {
+    font-family: "Noto Sans JP", "Inter", "Segoe UI", sans-serif;
+    color: var(--text-color);
+    background-color: var(--white);
+    letter-spacing: .02em;
+}
+
+/* 2. ヘッダー & ナビゲーション -----------------------------------------*/
+header {
+    background: rgba(255,255,255,.92); /* ほぼ白の透過でヒーローと重ねてもクリア */
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(0,0,0,.06);
+    box-shadow: var(--box-shadow);
+}
+
+header .container {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+nav ul li a {
+    font-weight: 600;
+    color: var(--dark-gray);
+    position: relative;
+}
+
+nav ul li a::after { /* ホバー時に下線スライド */
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: var(--secondary-color);
+    transition: width .25s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a.cta-button {
+    background: var(--secondary-color);
+    color: var(--white);
+    padding: 8px 18px;
+    border-radius: 24px;
+}
+
+/* ハンバーガー */
+.menu-toggle {
+    color: var(--primary-color);
+}
+
+/* 3. ヒーローセクション ----------------------------------------------*/
+.hero {
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 25px;
+    background: linear-gradient(180deg, rgba(0,48,135,.65) 0%, rgba(0,87,199,.55) 35%, rgba(0,161,255,.35) 100%),
+                url("images/hero-bg.jpg") center/cover fixed;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 860px;
+    text-align: center;
+    color: var(--white);
+    animation: fadeInUp .9s ease-out both;
+}
+
+.hero-content h1 {
+    font-size: clamp(1.8rem, 2.5vw + 1.8rem, 3.4rem);
+    line-height: 1.35;
+    font-weight: 800;
+    margin-bottom: 1.2rem;
+}
+
+.hero-content p {
+    font-size: clamp(.95rem, .6vw + 1rem, 1.25rem);
+    margin-bottom: 2.4rem;
+    opacity: .92;
+}
+
+.hero .cta-button {
+    font-size: 1.15rem;
+    padding: 15px 38px;
+    border-radius: 30px;
+    background: var(--accent-color);
+}
+
+.hero .cta-button:hover {
+    background: var(--secondary-color);
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* 4. セクション見出し -----------------------------------------------*/
+.section-title {
+    font-size: clamp(1.4rem, 1vw + 1.4rem, 2.2rem);
+    color: var(--primary-color);
+}
+
+.section-title::after {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    border-radius: 2px;
+}
+
+/* 5. 製品情報セクション ---------------------------------------------*/
+.product {
+    background: var(--light-gray);
+}
+
+.product-content {
+    gap: 60px;
+    align-items: center;
+}
+
+.product-image img {
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
+
+.feature {
+    background: var(--white);
+    box-shadow: var(--box-shadow);
+    transition: transform .25s, box-shadow .25s;
+}
+
+.feature:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 22px rgba(0,0,0,.08);
+}
+
+.feature h3 {
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+/* 6. 性能・特長 ------------------------------------------------------*/
+.performance {
+    background: var(--white);
+}
+
+.performance-item {
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+
+.performance-item h3 {
+    color: var(--primary-color);
+}
+
+.performance-note {
+    background-color: var(--light-gray);
+    border-left-color: var(--secondary-color);
+}
+
+/* 7. お客様の声タブ -----------------------------------------------*/
+.tab-button {
+    background: var(--medium-gray);
+    color: var(--dark-gray);
+    font-weight: 600;
+}
+
+.tab-button.active,
+.tab-button:hover {
+    background: var(--secondary-color);
+    color: var(--white);
+}
+
+.hospital_block {
+    background: var(--white);
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+}
+
+.hospital_midashi {
+    color: var(--secondary-color);
+}
+
+/* 8. お問い合わせ ---------------------------------------------------*/
+.contact {
+    background: linear-gradient(180deg, var(--light-gray) 0%, var(--white) 100%);
+}
+
+.contact-form {
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+}
+
+.submit-button {
+    background: var(--secondary-color);
+    border-radius: 28px;
+}
+
+.submit-button:hover {
+    background: var(--accent-color);
+}
+
+/* 9. フッター --------------------------------------------------------*/
+footer {
+    background: var(--primary-color);
+    padding-top: 60px;
+}
+
+.footer-links ul li a {
+    color: rgba(255,255,255,.9);
+}
+
+.footer-links ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* 10. レスポンシブ調整 ---------------------------------------------*/
+@media (max-width: 768px) {
+    .hero { height: 70vh; }
+    nav ul li a.cta-button { padding: 10px 20px; }
+} 

@@ -635,4 +635,71 @@ footer {
     .footer-links ul {
         justify-content: center;
     }
+}
+
+/* 病院ブロック（お客様の声）*/
+.hospital-area {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.hospital_block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    background-color: var(--light-gray);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
+
+.hospital_pic {
+    flex: 0 0 320px;
+    max-width: 320px;
+}
+
+.hospital_pic img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.hospital_right {
+    flex: 1 1 0;
+    min-width: 260px;
+}
+
+.hospital_midashi {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.hospital_qa {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.hospital_qa dt {
+    font-weight: 700;
+    margin-top: 15px;
+    color: var(--secondary-color);
+}
+
+.hospital_qa dd {
+    margin-left: 0;
+    margin-bottom: 10px;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+    .hospital_block {
+        flex-direction: column;
+    }
+    .hospital_pic {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
 } 
