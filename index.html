@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/logiq.css">
     <link rel="stylesheet" href="css/results.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -14,14 +17,13 @@
     <header>
         <div class="container">
             <div class="logo">
-                <img src="images/hd_logo.gif" alt="エアロサービス株式会社">
+                <img src="images/logo.png" alt="エアロサービス株式会社">
             </div>
             <nav>
                 <ul>
-                    <li><a href="#product">製品情報</a></li>
-                    <li><a href="#performance">性能・特長</a></li>
-                    <li><a href="#testimonials">お客様の声</a></li>
-                    <li><a href="#contact" class="cta-button">お問い合わせ</a></li>
+                    <li><a href="#product" class="active"><i class="fas fa-info-circle"></i> 製品情報</a></li>
+                    <li><a href="#testimonials"><i class="fas fa-comment-dots"></i> お客様の声</a></li>
+                    <li><a href="#contact" class="cta-button"><i class="fas fa-envelope"></i> お問い合わせ</a></li>
                 </ul>
             </nav>
             <div class="menu-toggle">
@@ -30,100 +32,42 @@
         </div>
     </header>
 
-    <section class="hero">
+    <!-- Hero & Product : Unified Section -->
+    <section id="product" class="intro product">
+        <!-- ── Product Details ───────────────────────────── -->
         <div class="container">
-            <div class="hero-content">
-                <h1>医療施設の空気環境を革新する<br>エアロシステム35M</h1>
-                <p>ハイパワー空気清浄機と質の高いメンテナンスが一体となった<br>業務用空気清浄システム</p>
-                <a href="#contact" class="cta-button">資料請求・お問い合わせ</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="product" class="product">
-        <div class="container">
-            <h2 class="section-title">エアロシステム35Mについて</h2>
+            <h2 class="section-title">安心できる空気環境のために</h2>
             <div class="product-content">
                 <div class="product-image">
-                    <img src="images/product.jpg" alt="エアロシステム35M">
+                    <img src="images/product.png" alt="エアロシステム35M">
                 </div>
                 <div class="product-text">
-                    <p>ハイパワー空気清浄機と質の高いメンテナンスが一体となった空気清浄システム。それが業務用空気清浄装置「エアロシステム35M」です。</p>
-                    <div class="features">
-                        <div class="feature">
-                            <img src="images/feature1.png" alt="毎分35m3の強力な空気清浄能力">
-                            <h3>毎分35m3の強力な空気清浄能力</h3>
-                            <p>市販の置き型空気清浄機の7～10倍の空気清浄能力</p>
-                        </div>
-                        <div class="feature">
-                            <img src="images/feature2.png" alt="最も効果的な天井埋込型">
-                            <h3>最も効果的な天井埋込型</h3>
-                            <p>場所を取らず、お子様が触る心配もなく安全</p>
-                        </div>
-                        <div class="feature">
-                            <img src="images/feature3.png" alt="5年間機能保証付き定期メンテナンス">
-                            <h3>5年間機能保証付き定期メンテナンス</h3>
-                            <p>エアロサービスパックがセットでご安心</p>
-                        </div>
-                    </div>
+                    <p>空気清浄装置を部屋にただ置いただけでは、部屋全体の空気はきれいになりません。
+                        適切な機器の選定・設置・メンテナンスを行ってはじめて、効果を実感することができるのです。
+                        エアロサービス株式会社は、創業から40年間以上、
+                        医療施設の空気環境をまじめにつくり続けてきました。
+                        本格的な空気清浄システムとして、多数の医療施設でご愛用いただいております。</p>
+                    <p style="margin: 20px 0;">
+                        <a href="#contact" class="cta-button"><i class="fas fa-file-alt"></i> 資料請求・お問い合わせ</a>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="performance" class="performance">
-        <div class="container">
-            <h2 class="section-title">性能・特長</h2>
-            <div class="performance-items">
-                <div class="performance-item">
-                    <h3>浮遊ウイルス除去性能試験</h3>
-                    <div class="performance-content">
-                        <div class="performance-text">
-                            <p><strong>試験機関：</strong>（財）日本食品分析センター</p>
-                            <p><strong>試験方法：</strong>（社）日本電機工業会が定めた空気清浄機の浮遊ウィルスに対する除去性能試験方法による。</p>
-                            <p><strong>試験結果：</strong><span class="highlight">5分後に自然減衰の21％に減少</span>、<span class="highlight">10分後に1.38％に減少</span>、<span class="highlight">20分後には0.02％まで減少</span></p>
-                            <div class="performance-note">
-                                <p>※グラフはマウスまたはタッチでインタラクティブに操作できます</p>
-                            </div>
-                        </div>
-                        <div class="performance-graph">
-                            <canvas id="virusRemovalChart"></canvas>
-                        </div>
-                    </div>
-                </div>
-                <div class="performance-item">
-                    <h3>花粉の除去性能評価試験</h3>
-                    <div class="performance-content">
-                        <div class="performance-text">
-                            <p><strong>試験機関：</strong>（財）日本食品分析センター</p>
-                            <p><strong>試験方法：</strong>25m&sup3;の試験空間にて高さ70cmのテーブル上に空気清浄機AR35M（中運転）を置いて実施</p>
-                            <p><strong>試験結果：</strong><span class="highlight">運転5分後には初期値の約7.3％まで減少。</span><span class="highlight">15分後には検出限界以下まで大幅に減少します。</span></p>
-                            <div class="performance-note">
-                                <p>※グラフはマウスまたはタッチでインタラクティブに操作できます</p>
-                            </div>
-                        </div>
-                        <div class="performance-graph">
-                            <canvas id="pollenRemovalChart"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section id="testimonials" class="testimonials">
         <div class="container">
             <h2 class="section-title">お客様の声</h2>
             <div class="tabs">
-                <button class="tab-button active" data-category="all">すべて</button>
-                <button class="tab-button" data-category="internal">内科</button>
-                <button class="tab-button" data-category="surgery">整形外科</button>
-                <button class="tab-button" data-category="pediatrics">小児科</button>
-                <button class="tab-button" data-category="gynecology">婦人科</button>
-                <button class="tab-button" data-category="otorhinolaryngology">耳鼻咽喉科</button>
-                <button class="tab-button" data-category="dermatology">皮膚科</button>
-                <button class="tab-button" data-category="ophthalmology">眼科</button>
-                <button class="tab-button" data-category="dental">歯科</button>
+                <button class="tab-button active" data-category="internal"><i class="fas fa-stethoscope"></i> 内科</button>
+                <button class="tab-button" data-category="surgery"><i class="fas fa-bone"></i> 整形外科</button>
+                <button class="tab-button" data-category="pediatrics"><i class="fas fa-baby"></i> 小児科</button>
+                <button class="tab-button" data-category="gynecology"><i class="fas fa-venus"></i> 婦人科</button>
+                <button class="tab-button" data-category="otorhinolaryngology"><i class="fas fa-ear"></i> 耳鼻咽喉科</button>
+                <button class="tab-button" data-category="dermatology"><i class="fas fa-allergies"></i> 皮膚科</button>
+                <button class="tab-button" data-category="ophthalmology"><i class="fas fa-eye"></i> 眼科</button>
+                <button class="tab-button" data-category="dental"><i class="fas fa-tooth"></i> 歯科</button>
             </div>
             <div class="hospital-area">
                 <!-- お客様の声（voice.htmlより転載） -->
@@ -460,32 +404,16 @@
                             </div>
                             <textarea id="other-details" name="other-details" placeholder="その他の場合は詳細をご記入ください"></textarea>
                         </div>
-                        <button type="submit" class="submit-button">送信する</button>
+                        <button type="submit" class="submit-button"><i class="fas fa-paper-plane"></i> 送信する</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <footer style="background: transparent; color: #333; padding: 20px 0;">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="images/hd_logo.gif" alt="エアロサービス株式会社">
-                    <p>エアロサービス株式会社</p>
-                </div>
-                <div class="footer-links">
-                    <ul>
-                        <li><a href="#product">製品情報</a></li>
-                        <li><a href="#performance">性能・特長</a></li>
-                        <li><a href="#testimonials">お客様の声</a></li>
-                        <li><a href="#contact">お問い合わせ</a></li>
-                        <li><a href="https://aero-service.co.jp/info/privacy.html">プライバシーポリシー</a></li>
-                        <li><a href="https://aero-service.co.jp/info/site_policy.html">サイトポリシー</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="copyright">
+            <div class="copyright" style="opacity: 1; text-align: center; padding-top: 0; border-top: none;">
                 <p>Copyright (C) AERO SERVICE CO., LTD. All rights reserved.</p>
             </div>
         </div>

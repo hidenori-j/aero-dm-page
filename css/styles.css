@@ -198,32 +198,42 @@ nav ul li a.cta-button {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: space-between;
+    margin-top: 30px;
 }
 
 .feature {
     flex: 1;
-    min-width: 200px;
-    background-color: var(--light-gray);
-    padding: 20px;
-    border-radius: 8px;
+    min-width: 280px;
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 12px;
     text-align: center;
     transition: var(--transition);
+    box-shadow: var(--box-shadow);
 }
 
 .feature:hover {
     transform: translateY(-5px);
-    box-shadow: var(--box-shadow);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
-.feature img {
-    height: 80px;
-    margin-bottom: 15px;
+.feature i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
 }
 
 .feature h3 {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
     color: var(--primary-color);
+    font-weight: 600;
+}
+
+.feature p {
+    font-size: 0.95rem;
+    color: var(--dark-gray);
+    line-height: 1.6;
 }
 
 /* 性能・特長セクション */
@@ -306,7 +316,8 @@ nav ul li a.cta-button {
 }
 
 .performance-text p {
-    margin-bottom: 10px;
+    margin-bottom: 0.6rem;
+    font-size: 0.6rem;
 }
 
 .performance-text .highlight {

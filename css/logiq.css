@@ -178,6 +178,7 @@ nav ul li a.cta-button {
     border-radius: 12px;
     box-shadow: var(--box-shadow);
     overflow: hidden;
+    padding: 22px 20px;               /* 余白をやや縮小 */
 }
 
 .performance-item h3 {
@@ -187,6 +188,27 @@ nav ul li a.cta-button {
 .performance-note {
     background-color: var(--light-gray);
     border-left-color: var(--secondary-color);
+}
+
+.performance-content {
+    gap: 20px;                        /* コンテンツ間のスペースを縮小 */
+}
+
+.performance-graph {
+    flex: 3;                          /* グラフ領域をさらに拡大 */
+    max-width: none;                  /* 幅上限を解除しコンテナに合わせる */
+    width: 100%;
+    aspect-ratio: 1 / 1;              /* デフォルトでは正方形比率を維持 */
+    padding: 12px 14px 14px 12px;     /* 内側余白を調整しキャンバス領域を広げる */
+    min-height: 420px;      /* デフォルト高さを拡大 */
+}
+
+/* デスクトップでは横長比率で表示し、モバイルは正方形を維持 */
+@media (min-width: 1024px) {
+    .performance-graph {
+        aspect-ratio: 16 / 9;         /* 横長グラフで視認性向上 */
+        min-height: 560px;  /* 大画面ではさらに高く */
+    }
 }
 
 /* 7. お客様の声タブ -----------------------------------------------*/
@@ -249,4 +271,98 @@ footer {
 @media (max-width: 768px) {
     .hero { height: 70vh; }
     nav ul li a.cta-button { padding: 10px 20px; }
+    .performance-graph {
+        min-height: 320px;  /* モバイルでも十分な高さを確保 */
+    }
+}
+
+/* --------------------------------------------------*/
+/* 11. コンテナとセクション余白の最適化 ----------------------------*/
+/* --------------------------------------------------*/
+.container {
+    width: 98%;            /* さらに横幅を拡大し余白を最小化 */
+    max-width: 1600px;     /* 最大幅も拡大 */
+    padding-left: 4px;     /* 左右パディングを極小化 */
+    padding-right: 4px;
+}
+
+section {
+    padding: 45px 0;       /* 上下余白をさらに縮小 */
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;        /* モバイル時もさらに余白を削減 */
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+    section {
+        padding: 35px 0;   /* モバイル上下余白も縮小 */
+    }
+}
+
+/* --------------------------------------------------*/
+/* 12. 性能グラフレイアウト最適化 ----------------------------*/
+/* --------------------------------------------------*/
+.performance-text {
+    flex: 0.7;              /* テキスト領域をさらに縮小 */
+    min-width: 240px;       /* 最小幅を縮める */
+}
+
+.performance-text p {
+    font-size: 0.5rem;      /* 説明文をさらに小さく */
+    margin-bottom: 0.4rem;  /* 余白も縮小 */
+}
+
+@media (max-width: 768px) {
+    .performance-text {
+        flex: 1;
+        min-width: 100%;    /* モバイルでは縦並びになるためフル幅 */
+    }
+    .performance-text p {
+        font-size: 0.6rem;  /* モバイルでは読めるサイズに戻す */
+    }
+    .performance-graph {
+        flex: 1;
+        max-width: 100%;
+        margin-top: 15px;   /* 縦並び時の余白調整 */
+    }
+}
+
+@media (max-width: 480px) {
+    /* コンテナとセクション余白 */
+    .container {
+        width: 94%;
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+    section {
+        padding: 30px 0; /* さらにコンパクトに */
+    }
+
+    /* ヒーローテキストのスケール調整 */
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    .hero-content p {
+        font-size: 0.95rem;
+    }
+
+    /* セクションタイトル */
+    .section-title {
+        font-size: 1.45rem;
+    }
+
+    /* 性能グラフ関連 */
+    .performance-text p {
+        font-size: 0.62rem; /* 読みやすさを保ちつつ小型化 */
+    }
+
+    /* ボタン類 */
+    .button,
+    .cta-button,
+    .submit-button {
+        padding: 10px 18px;
+        font-size: 0.95rem;
+    }
 } 
