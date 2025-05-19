@@ -192,6 +192,20 @@ nav ul li a.cta-button:hover {
     transform: translateY(-10px) scale(1.01);
 }
 
+.product-text {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+}
+
+.product-text.fade-in-up {
+    opacity: 1;
+    transform: translateY(0);
+    animation: none; /* 基本のfade-in-upをオーバーライドしてトランジションを使用 */
+}
+
 .product-text h2 {
     font-size: 1.6rem;
     color: var(--primary-color);
@@ -203,7 +217,40 @@ nav ul li a.cta-button:hover {
     font-size: 1rem;
     line-height: 1.7;
     margin-bottom: 25px;
-    color: var(--dark-gray);
+    position: relative;
+    padding-left: 15px;
+    color: #004d99; /* 少し濃い青 */
+}
+
+/* 最初の段落のみ特別スタイル */
+.product-text p::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+    border-radius: 3px;
+}
+
+/* 改行後の段落ごとに色を変える */
+.product-text p br:nth-of-type(1) ~ span,
+.product-text p br:nth-of-type(1) ~ strong,
+.product-text p br:nth-of-type(1) ~ text {
+    color: #006699; /* 2段落目: 青緑がかった色 */
+}
+
+.product-text p br:nth-of-type(2) ~ span,
+.product-text p br:nth-of-type(2) ~ strong,
+.product-text p br:nth-of-type(2) ~ text {
+    color: #0033cc; /* 3段落目: 鮮やかな青 */
+}
+
+.product-text p br:nth-of-type(3) ~ span,
+.product-text p br:nth-of-type(3) ~ strong,
+.product-text p br:nth-of-type(3) ~ text {
+    color: #003366; /* 4段落目: 暗めの青 */
 }
 
 .feature {

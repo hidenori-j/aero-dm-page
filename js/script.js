@@ -9,8 +9,31 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // スクロールアニメーション
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in-up');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // product-text要素を監視
+    const productText = document.querySelector('.product-text');
+    if (productText) {
+        productText.classList.remove('fade-in-up'); // 最初に削除しておく
+        observer.observe(productText);
+    }
+
     // アニメーション要素に遅延を適用
-    const animateElements = document.querySelectorAll('.section-title, .product-image, .product-text, .feature, .hospital_block, .contact-info, .contact-form');
+    const animateElements = document.querySelectorAll('.section-title, .product-image, .feature, .hospital_block, .contact-info, .contact-form');
     
     if (animateElements.length > 0) {
         animateElements.forEach((element, index) => {
